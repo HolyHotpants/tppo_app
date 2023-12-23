@@ -1,0 +1,5 @@
+CREATE TABLE ValutesInfo(
+    valuteName varchar(50) NOT NULL PRIMARY KEY,
+    rate FLOAT NOT NULL,
+    date Date NOT NULL PRIMARY KEY
+)

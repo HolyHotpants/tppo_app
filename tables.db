@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS Valutes(
+    id_val serial NOT NULL primary key,
+    name varchar(50)
+);
+
+CREATE TABLE IF NOT EXISTS Archive_Exc_rate(
+    id_val integer NOT NULL REFERENCES Valutes (id_val),
+    exc_rate money,
+    date date
+	PRIMARY KEY (id_val,date)
+);
+
+CREATE TABLE IF NOT EXISTS Exchange_rate(
+    id_val integer NOT NULL REFERENCES Valutes (id_val),
+    exc_rate money,
+    date date
+	PRIMARY KEY (id_val,date)
+);
+
+CREATE TABLE IF NOT EXISTS Statistic(
+    id_val integer NOT NULL REFERENCES Valutes (id_val),
+    average real,
+    today_grow real,
+    date date
+	PRIMARY KEY (id_val,date)
+);
